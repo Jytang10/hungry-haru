@@ -1,0 +1,80 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: red;
+  display: flex;
+  width: 90%;
+  height: 15vh;
+  margin: auto;
+  align-items: center;
+}
+
+.logo-container, .game-progress {
+  display: flex;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 40px;
+  margin: 10px;
+}
+
+.game-progress {
+  flex: 2;
+  background-color: grey;
+}
+
+.game-progress img {
+  height: 20%;
+  width: 20%;
+}
+
+.game-area {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-height: 85vh;
+  align-items: center;
+}
+
+.game-stats {
+  flex: 1;
+}
+
+.stats-title h2 {
+  font-size: 30px;
+  font-weight: 600;
+  background: linear-gradient(to right, blue, red);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.haru-emoji img {
+  height: 100%;
+  width: 100%;
+}
+
+.main-card-container {
+  flex: 3;
+  background-color: navy;
+}
+
+aside {
+  background-color: aquamarine;
+}
