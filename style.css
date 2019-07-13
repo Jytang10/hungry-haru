@@ -1,0 +1,135 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Snoopy';
+  src: url(./assets/snoopy_reg-webfont.otf) format('otf');
+}
+
+body {
+  font-family: 'Snoopy', 'Roboto', sans-serif;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  background: url('./img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+button {
+  font-family: 'Snoopy', 'Roboto', sans-serif;
+}
+
+header {
+  display: flex;
+  position: relative;
+  width: 90%;
+  height: 15vh;
+  margin: auto;
+  align-items: center;
+}
+
+.logo-container, .game-progress {
+  display: flex;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 3rem;
+  margin: 10px;
+  text-align: center;
+}
+
+.game-progress {
+  flex: 3;
+  height: 100%;
+  border: 1mm ridge rgba(255, 0, 0, 0.849);
+}
+
+.game-progress img {
+  height: 100%;
+}
+
+.game-area {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-height: 85vh;
+  align-items: center;
+}
+
+.game-stats {
+  flex: 1;
+  border: 1mm ridge rgba(255, 0, 0, 0.849);
+  margin-right: 3%;
+}
+
+.stats-title h2 {
+  font-size: 30px;
+  font-weight: 600;
+  background: linear-gradient(to right, red, orange);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.emoji img {
+  height: 50%;
+  width: 50%;
+}
+
+.main-card-container {
+  flex: 6;
+  /* border: 1mm ridge rgba(255, 0, 0, 0.849); */
+}
+
+.box {
+  position: relative;
+  width: 14.66%;
+  float: left;
+  border: 2px solid gray;
+  margin: 1%;
+}
+
+.box:after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/cover.png');
+  background-size: contain;
+  background-repeat: none;
+}
+
+
+@media screen and (max-width: 870px) {
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    opacity: 0;
+  }
+}
