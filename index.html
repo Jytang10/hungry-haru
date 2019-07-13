@@ -2,33 +2,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hungry Haru</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" card-back="IE=edge">
+    <title>The Peanut Gallery</title>
+    <meta name="viewport" card-back="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./style.css">
     <script src="main.js"></script>
   </head>
   <body>
 
-    <header>
+    <header class="container-fluid">
       <div class="logo-container">
-        <h1 class="logo">Hungry Haru</h1>
+        <h1 class="logo">The Peanut Gallery</h1>
       </div>
       <div class="game-progress">
-        <img src="./img/sad.png" alt="sad haru" class="loss-img">
-        <img src="./img/boss.png" alt="boss" class="status-img">
+        <div class="win">
+          <img src="./img/pizza.png" alt="pizza" class="win-img img-fluid">
+        </div>
+        <div class="characters">
+            <img src="./img/bigsnoopy.png" alt="big snoopy" class="hero-img img-fluid float-left">
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="game-area">
-        <aside class="game-stats">
+      <section class="game-area container-fluid">
+
+        <aside class="game-stats container-fluid">
           <div class="stats-title">
             <h2 class="stat-title-text">Game Stats</h2>
           </div>
           <div class="attempts-header">
-            <h3 class="attempts-header-text">Accuracy</h3>
+            <h3 class="attempts-header-text">Attempts</h3>
           </div>
           <div class="attempts-value">
             <h4 class="attempts-value-text">0</h4>
@@ -40,27 +46,98 @@
             <h4 class="accuracy-value-text">0</h4>
           </div>
           <div class="games-played-header">
-            <h3 class="games-played-header-text">Accuracy</h3>
+            <h3 class="games-played-header-text">Games Played</h3>
           </div>
           <div class="games-played-value">
             <h4 class="games-played-value-text">0</h4>
           </div>
-          <div class="haru-emoji">
-            <img src="./img/happy.png" alt="happy haru">
+          <div class="emoji">
+            <img src="./img/go.png" alt="emoji" class="img-fluid">
           </div>
         </aside>
-        <div class="main-card-container">
-          <div class="card-container">
-            <div class="card-back"></div>
-            <div class="card-front"></div>
-          </div>
-          <div class="card-container">
+
+        <div class="main-card-container container-fluid">
+          <div class="container">
+            <div class="box">
               <div class="card-back"></div>
               <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
+            <div class="box">
+              <div class="card-back"></div>
+              <div class="card-front"></div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
