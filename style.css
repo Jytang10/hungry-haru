@@ -65,7 +65,7 @@ header {
 .game-progress {
   flex: 3;
   height: 100%;
-  border: 1mm ridge rgb(240, 140, 157);
+  /* border: 1mm solid rgb(240, 140, 157); */
 }
 
 .game-progress img {
@@ -90,7 +90,7 @@ header {
 
 .game-stats {
   flex: 1;
-  border: 1mm ridge rgb(240, 140, 157);
+  border: 1mm solid rgb(240, 140, 157);
   margin-right: 3%;
   text-align: center;
 }
@@ -138,7 +138,7 @@ aside h3 {
   padding-top: 100%;
 }
 
-.card-back, .card-front, .snoopy, .woodstock {
+.card-back, .card-front, .snoopy, .woodstock, .charlie, .linus, .lucy, .pepper, .pig, .sally, .schroeder {
   width: 100%;
   height: 100%;
   background-position: center;
@@ -154,7 +154,7 @@ aside h3 {
   position: absolute;
 }
 
-.card-container:hover .card-face {
+.card-container:hover {
   -webkit-animation-name: wiggle;
   -ms-animation-name: wiggle;
   -ms-animation-duration: 500ms;
