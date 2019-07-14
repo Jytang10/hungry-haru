@@ -223,6 +223,11 @@ aside h3 {
   color: #ec873a;
 }
 
+.lose-modal-style {
+  background:whitesmoke;
+  color: rgb(53, 106, 221);
+}
+
 .about-img {
   width: 50%;
 }

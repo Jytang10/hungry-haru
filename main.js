@@ -114,6 +114,10 @@ function displayStats() {
   $('.accuracy-value-text').text(storeResult + '%');
   $('.games-played-value-text').text(games_played);
   move();
+  if(attempts === 30) {
+    games_played++
+    $('#loseModal').modal({backdrop: 'static', keyboard: false})  
+  }
 }
 
 function removeAllCards() {
