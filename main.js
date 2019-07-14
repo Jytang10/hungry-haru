@@ -52,8 +52,8 @@ function createAllCards() {
   for(let index = 0; index < 18; index++){
       let cardContainer = $('<div>').addClass('card-container');
       let randomImg = shuffledArray[index];
-      let cardFront = $('<div>').addClass('card-front').addClass(randomImg);
-      let cardBack = $('<div>').addClass('card-back');
+      let cardFront = $('<div>').addClass('card-front card-face').addClass(randomImg);
+      let cardBack = $('<div>').addClass('card-back card-face');
       cardContainer.append(cardFront, cardBack);
       $('.main-card-container').append(cardContainer);
   }
@@ -76,8 +76,8 @@ function handleCardClick( event ) {
     can_click_card = false
     matches++;
     setTimeout(()=>{
-      $(firstCardClicked).addClass('opacity-zero');
-      $(secondCardClicked).addClass('opacity-zero');
+      $(firstCardClicked).addClass('opacity-zero no-cursor');
+      $(secondCardClicked).addClass('opacity-zero no-cursor');
       firstCardClicked = null;
       secondCardClicked = null;
       can_click_card = true;

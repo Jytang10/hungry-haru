@@ -66,7 +66,6 @@ header {
   flex: 3;
   height: 100%;
   /* border: 1mm solid rgb(240, 140, 157); */
-  
   background-image: url(./img/grass.jpg);
   background-size: contain;
 }
@@ -123,12 +122,16 @@ aside h3 {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transition: all 600ms;
-  transition: all 600ms;
+  transition: all 600ms ease-in-out;
   z-index: 20;
   float: left;
   margin: 1%;
   cursor: pointer;
   filter: drop-shadow(0 0 0.1rem red);
+}
+
+.no-cursor {
+  cursor: not-allowed !important;
 }
 
 .card-face {
