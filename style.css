@@ -37,7 +37,8 @@ header {
   position: relative;
   width: 90%;
   height: 15vh;
-  margin: auto;
+  margin-left: 2px;
+  margin-right: 2px;
   align-items: center;
 }
 
@@ -65,21 +66,22 @@ header {
 .game-progress {
   flex: 3;
   height: 100%;
-  /* border: 1mm solid rgb(240, 140, 157); */
-  background-image: url(./img/grass.jpg);
-  background-size: contain;
+  position: relative;
 }
 
 .game-progress img {
   height: 100%;
 }
 
-.player-img {
-  align-self: right;
+.paw-prints {
+  opacity: .75;
+  filter: drop-shadow(0 0 0.65rem red);
 }
 
-.rival-img {
-  align-self: right;
+.player-img {
+  position: absolute;
+  right: 0%;
+  z-index: 100;
 }
 
 .game-area {
@@ -248,6 +250,12 @@ aside h3 {
   50% {transform: rotate(10deg);}
   75% {transform: rotate(-2.5deg);}
   100% {transform: rotate(0deg);}
+}
+
+@media screen and (max-width: 993px) {
+  .logo {
+    font-size: 2.4rem;
+  }
 }
 
 @media screen and (max-width: 870px) {
