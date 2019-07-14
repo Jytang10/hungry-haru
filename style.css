@@ -141,11 +141,33 @@ header {
   background-image: url('./img/cards/woodstock.gif');
 }
 
+.charlie {
+  background-image: url('./img/cards/charlie.png');
+}
 
+.linus {
+  background-image: url('./img/cards/linus.jpg');
+}
 
+.lucy {
+  background-image: url('./img/cards/lucy.jpg');
+}
 
+.pepper {
+  background-image: url('./img/cards/pepper.gif');
+}
 
+.pig {
+  background-image: url('./img/cards/pig.png');
+}
 
+.sally {
+  background-image: url('./img/cards/sally.gif');
+}
+
+.schroeder {
+  background-image: url('./img/cards/schroeder.jpg');
+}
 
 .hidden {
   display: none;
