@@ -54,16 +54,21 @@ header {
 }
 
 .logo {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 3rem;
   margin: 10px;
   text-align: center;
+  /* background: linear-gradient(to right, rgb(233, 5, 24), orange);
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: orange;
+  text-shadow: 0.7px 0.7px black;
 }
 
 .game-progress {
   flex: 3;
   height: 100%;
-  border: 1mm ridge rgba(255, 0, 0, 0.849);
+  border: 1mm ridge rgb(240, 140, 157);
 }
 
 .game-progress img {
@@ -80,37 +85,49 @@ header {
 
 .game-stats {
   flex: 1;
-  border: 1mm ridge rgba(255, 0, 0, 0.849);
+  border: 1mm ridge rgb(240, 140, 157);
   margin-right: 3%;
+  text-align: center;
 }
 
-.stats-title h2 {
-  font-size: 30px;
-  font-weight: 600;
-  background: linear-gradient(to right, red, orange);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+aside h3 {
+  color: orange;
 }
 
-.emoji img {
-  height: 50%;
-  width: 50%;
+.cheer img {
+  width: 100%;
 }
 
 .main-card-container {
   flex: 6;
-  /* border: 1mm ridge rgba(255, 0, 0, 0.849); */
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
-.card {
+.card-container {
   position: relative;
   width: 14.66%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+  z-index: 20;
   float: left;
-  border: 2px solid gray;
   margin: 1%;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.1rem red);
 }
 
-.card:after {
+.card-face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+
+.card-container:after {
   content: "";
   display: block;
   padding-top: 100%;
@@ -121,7 +138,6 @@ header {
   height: 100%;
   background-position: center;
   background-size: cover;
-  background-repeat: none;
 }
 
 .card-back {
@@ -131,6 +147,17 @@ header {
 
 .card-front {
   position: absolute;
+}
+
+.card-container:hover .card-face {
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  -ms-animation-duration: 500ms;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
 }
 
 .snoopy {
@@ -169,8 +196,41 @@ header {
   background-image: url('./img/cards/schroeder.jpg');
 }
 
+.opacity-zero {
+  opacity: 0;
+}
+
 .hidden {
   display: none;
+}
+
+.modal-style {
+  background: aliceblue;
+  color: #ec873a;
+}
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: rotate(5deg);}
+  25% {-webkit-transform: rotate(-5deg);}
+  50% {-webkit-transform: rotate(10deg);}
+  75% {-webkit-transform: rotate(-2.5deg);}
+  100% {-webkit-transform: rotate(0deg);}
+}
+
+@-ms-keyframes wiggle {
+  0% {-ms-transform: rotate(0.5deg);}
+  25% {-ms-transform: rotate(-0.5deg);}
+  50% {-ms-transform: rotate(0.75deg);}
+  75% {-ms-transform: rotate(-2.5deg);}
+  100% {-ms-transform: rotate(0deg);}
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(5deg);}
+  25% {transform: rotate(-5deg);}
+  50% {transform: rotate(10deg);}
+  75% {transform: rotate(-2.5deg);}
+  100% {transform: rotate(0deg);}
 }
 
 @media screen and (max-width: 870px) {

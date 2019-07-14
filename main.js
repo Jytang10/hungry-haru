@@ -9,14 +9,23 @@ let max_matches = 9;
 let attempts = 0;
 let accuracy = 0;
 let games_played = 0;
+// let card = document.querySelector('.card');
 
 function initializeApp() {
   // app = new Game($('body'));
-  $('.card').on('click', handleCardClick);
+  $('.card-container').on('click', handleCardClick);
   $('.new-game').on('click', resetStats);
   $('.restart-game').on('click', restartGame);
   displayStats();
+  // flipCard();
 }
+
+// function flipCard() {
+//   let card = document.querySelector('.card');
+//   card.addEventListener('click', ()=> {
+//   card.classList.toggle('is-flipped');
+//   });
+// }
 
 function handleCardClick( event ) {
   $(event.currentTarget).find('.card-back').addClass('hidden');
@@ -27,12 +36,13 @@ function handleCardClick( event ) {
     attempts++;
   }
   if ($(firstCardClicked).find('.card-front').css('background-image') === $(secondCardClicked).find('.card-front').css('background-image')) {
-    console.log('cards match');
     matches++;
-    $(firstCardClicked).addClass('hidden');
-    $(secondCardClicked).addClass('hidden');
-    firstCardClicked = null;
-    secondCardClicked = null;
+    setTimeout(()=>{
+      $(firstCardClicked).addClass('opacity-zero');
+      $(secondCardClicked).addClass('opacity-zero');
+      firstCardClicked = null;
+      secondCardClicked = null;
+    }, 500);
     displayStats();
     if(matches === max_matches) {
     games_played++;
@@ -59,7 +69,6 @@ function calculateAccuracy() {
 
 function displayStats() {
   let storeResult = calculateAccuracy().toFixed(0);
-  console.log(storeResult)
   $('.attempts-value-text').text(attempts);
   $('.accuracy-value-text').text(storeResult + '%');
   $('.games-played-value-text').text(games_played);
@@ -72,7 +81,7 @@ function resetStats() {
   firstCardClicked = null;
   secondCardClicked = null;
   displayStats();
-  $('.card').removeClass('hidden');
+  $('.card-container').removeClass('opacity-zero');
   $('.card-back').removeClass('hidden');
   $('#winModal').modal('hide');
 }
