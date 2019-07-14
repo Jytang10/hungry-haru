@@ -2,21 +2,60 @@ $(document).ready(initializeApp);
 
 let app;
 
-let firstCardClicked = null;
-let secondCardClicked = null;
-let matches = 0;
-let max_matches = 9;
-let attempts = 0;
-let accuracy = 0;
-let games_played = 0;
-// let card = document.querySelector('.card');
-
 function initializeApp() {
   // app = new Game($('body'));
+  createAllCards();
   $('.card-container').on('click', handleCardClick);
   $('.new-game').on('click', resetStats);
   $('.restart-game').on('click', restartGame);
   displayStats();
+}
+
+let firstCardClicked = null;
+let secondCardClicked = null;
+let can_click_card = true;
+let matches = 0;
+let max_matches = 9;
+let max_attempts = 35;
+let attempts = 0;
+let accuracy = 0;
+let games_played = 0;
+let imageArray = [
+  'snoopy',
+  'woodstock', 
+  'charlie',
+  'linus',
+  'lucy',
+  'pepper',
+  'pig',
+  'sally',
+  'schroeder'
+];
+
+function createAllCards() {
+  let doubleImages = imageArray.concat(imageArray);
+
+  function shuffle(array){
+      let currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+      }
+      return array;
+  }
+  let shuffledArray = shuffle(doubleImages);
+
+  for(let index = 0; index < 18; index++){
+      let cardContainer = $('<div>').addClass('card-container');
+      let randomImg = shuffledArray[index];
+      let cardFront = $('<div>').addClass('card-front').addClass(randomImg);
+      let cardBack = $('<div>').addClass('card-back');
+      cardContainer.append(cardFront, cardBack);
+      $('.main-card-container').append(cardContainer);
+  }
 }
 
 function handleCardClick( event ) {
@@ -38,7 +77,6 @@ function handleCardClick( event ) {
     displayStats();
     if(matches === max_matches) {
     games_played++;
-    console.log(games_played)
     $('#winModal').modal('show');
     }
   } else if(firstCardClicked && secondCardClicked && $(firstCardClicked).find('.card-front').css('background-image') !== $(secondCardClicked).find('.card-front').css('background-image')) {
@@ -66,6 +104,10 @@ function displayStats() {
   $('.games-played-value-text').text(games_played);
 }
 
+function removeAllCards() {
+  $( ".card-container" ).remove();
+}
+
 function resetStats() {
   matches = 0;
   accuracy = 0;
@@ -73,8 +115,9 @@ function resetStats() {
   firstCardClicked = null;
   secondCardClicked = null;
   displayStats();
-  $('.card-container').removeClass('opacity-zero');
-  $('.card-back').removeClass('hidden');
+  removeAllCards();
+  createAllCards();
+  $('.card-container').on('click', handleCardClick);
   $('#winModal').modal('hide');
 }
 
