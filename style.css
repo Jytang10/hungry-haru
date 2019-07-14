@@ -58,9 +58,6 @@ header {
   font-size: 3rem;
   margin: 10px;
   text-align: center;
-  /* background: linear-gradient(to right, rgb(233, 5, 24), orange);
-	-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   color: orange;
   text-shadow: 0.7px 0.7px black;
 }
@@ -73,6 +70,14 @@ header {
 
 .game-progress img {
   height: 100%;
+}
+
+.player-img {
+  align-self: right;
+}
+
+.rival-img {
+  align-self: right;
 }
 
 .game-area {

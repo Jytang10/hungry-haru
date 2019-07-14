@@ -12,7 +12,6 @@
     <script src="main.js"></script>
   </head>
   <body>
-
     <header class="container-fluid">
       <div class="logo-container">
         <h1 class="logo">The Peanut Gallery</h1>
@@ -22,14 +21,14 @@
           <img src="./img/yay.png" alt="yay" class="win-img img-fluid">
         </div>
         <div class="characters">
-            <img src="./img/bigsnoopy.png" alt="big snoopy" class="hero-img img-fluid float-left">
+            <img src="./img/olaf.png" alt="olaf" class="rival-img img-fluid">
+            <img src="./img/bigsnoopy.png" alt="big snoopy" class="player-img img-fluid">
         </div>
       </div>
     </header>
-
     <main>
+      <!-- Stats Area -->
       <section class="game-area container-fluid">
-
         <aside class="game-stats container-fluid">
           <div class="attempts-header">
             <h3 class="attempts-header-text">Attempts</h3>
@@ -53,15 +52,17 @@
             <img src="./img/go.png" alt="cheer" class="img-fluid">
           </div>
           <div class="restart-container">
-            <button class="restart-game btn btn-danger">Restart</button>
+            <button class="restart-game btn btn-warning">Restart</button>
           </div>
         </aside>
-
+        <!-- Game Area -->
         <div class="main-card-container container-fluid">
           <div class="container">
             <div class="card-container">
-              <div class="card-front card-face snoopy"></div>
-              <div class="card-back card-face"></div>
+              <div class="card-inner">
+                <div class="card-front card-face snoopy"></div>
+                <div class="card-back card-face"></div>
+              </div>
             </div>
             <div class="card-container">
               <div class="card-front card-face snoopy"></div>
@@ -135,7 +136,7 @@
         </div>
       </section>
     </main>
-    <!-- Modal -->
+    <!-- Win Modal -->
     <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="winModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content modal-style">

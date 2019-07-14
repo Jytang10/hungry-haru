@@ -17,15 +17,7 @@ function initializeApp() {
   $('.new-game').on('click', resetStats);
   $('.restart-game').on('click', restartGame);
   displayStats();
-  // flipCard();
 }
-
-// function flipCard() {
-//   let card = document.querySelector('.card');
-//   card.addEventListener('click', ()=> {
-//   card.classList.toggle('is-flipped');
-//   });
-// }
 
 function handleCardClick( event ) {
   $(event.currentTarget).find('.card-back').addClass('hidden');
