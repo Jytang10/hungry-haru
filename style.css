@@ -80,7 +80,6 @@ header {
 
 .player-img {
   position: absolute;
-  right: 0%;
   z-index: 100;
 }
 
@@ -226,6 +225,141 @@ aside h3 {
 
 .about-img {
   width: 50%;
+}
+
+.match1-move {
+  animation: match1-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+.match2-move {
+  animation: match2-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+.match3-move {
+  animation: match3-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+.match4-move {
+  animation: match4-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+.match5-move {
+  animation: match5-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+.match6-move {
+  animation: match6-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+.match7-move {
+  animation: match7-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+.match8-move {
+  animation: match8-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+.match9-move {
+  animation: match9-mover 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes match1-mover
+{
+    from {
+      right: 0%;
+    }
+    to {
+        right: 9%;
+    }
+}
+
+@keyframes match2-mover
+{
+    from {
+      right: 9%;
+    }
+    to {
+        right: 18%;
+    }
+}
+
+@keyframes match3-mover
+{
+    from {
+      right: 18%;
+    }
+    to {
+        right: 27%;
+    }
+}
+
+@keyframes match4-mover
+{
+    from {
+      right: 27%;
+    }
+    to {
+        right: 36%;
+    }
+}
+
+@keyframes match5-mover
+{
+    from {
+      right: 36%;
+    }
+    to {
+        right: 45%;
+    }
+}
+
+@keyframes match6-mover
+{
+    from {
+      right: 45%;
+    }
+    to {
+        right: 54%;
+    }
+}
+
+@keyframes match7-mover
+{
+    from {
+      right: 54%;
+    }
+    to {
+        right: 63%;
+    }
+}
+
+@keyframes match8-mover
+{
+    from {
+      right: 63%;
+    }
+    to {
+        right: 72%;
+    }
+}
+
+@keyframes match9-mover
+{
+    from {
+      right: 72%;
+    }
+    to {
+        right: 81%;
+    }
 }
 
 @-webkit-keyframes wiggle {

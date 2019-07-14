@@ -113,6 +113,7 @@ function displayStats() {
   $('.attempts-value-text').text(attempts);
   $('.accuracy-value-text').text(storeResult + '%');
   $('.games-played-value-text').text(games_played);
+  move();
 }
 
 function removeAllCards() {
@@ -129,6 +130,7 @@ function resetStats() {
   removeAllCards();
   createAllCards();
   $('.card-container').on('click', handleCardClick);
+  $('.player-img').removeClass('match1-move match2-move match3-move match4-move match5-move match6-move match7-move match8-move match9-move');
   $('#winModal').modal('hide');
 }
 
@@ -139,4 +141,38 @@ function restartGame(){
 
 function aboutModal(){ 
   $('#aboutModal').modal('show');
+}
+
+function move() {
+  let player = $('.player-img');
+  switch(matches) {
+    case 1:
+      player.addClass('match1-move')
+      break;
+    case 2:
+      player.addClass('match2-move')
+      break;
+    case 3:
+      player.addClass('match3-move')
+      break;
+    case 4:
+      player.addClass('match4-move')
+      break;
+    case 5:
+      player.addClass('match5-move')
+      break;
+    case 6:
+      player.addClass('match6-move')
+      break;
+    case 7:
+      player.addClass('match7-move')
+      break;
+    case 8:
+      player.addClass('match8-move')
+      break;
+    case 9:
+      player.addClass('match9-move')
+      break;
+    default:
+  }
 }
