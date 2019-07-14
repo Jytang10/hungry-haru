@@ -8,6 +8,7 @@ function initializeApp() {
   $('.card-container').on('click', handleCardClick);
   $('.new-game').on('click', resetStats);
   $('.restart-game').on('click', restartGame);
+  $('.about').on('click', aboutModal);
   displayStats();
 }
 
@@ -124,4 +125,8 @@ function resetStats() {
 function restartGame(){ 
   games_played++;
   resetStats();
+}
+
+function aboutModal(){ 
+  $('#aboutModal').modal('show');
 }
