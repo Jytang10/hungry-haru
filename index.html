@@ -18,10 +18,10 @@
       </div>
       <div class="game-progress">
         <div class="win">
-          <img src="./img/yay.png" alt="yay" class="win-img img-fluid">
+          <img src="./img/house.jpg" alt="yay" class="win-img img-fluid">
         </div>
         <div class="characters">
-            <img src="./img/olaf.png" alt="olaf" class="rival-img img-fluid">
+            <!-- <img src="./img/olaf.png" alt="olaf" class="rival-img img-fluid"> -->
             <img src="./img/bigsnoopy.png" alt="big snoopy" class="player-img img-fluid">
         </div>
       </div>
@@ -53,6 +53,7 @@
           </div>
           <div class="restart-container">
             <button class="restart-game btn btn-warning">Restart</button>
+            <button class="about btn btn-outline-secondary">About</button>
           </div>
         </aside>
         <!-- Game Area -->
@@ -73,8 +74,32 @@
             <h2>Thank you for playing. Would you like to play again?</h2>
             <img src="./img/bravo.png" alt="bravo" class="img-fluid">
           </div>
-          <div class="modal-footer text-center justify-content-center">
+          <div class="modal-footer justify-content-center">
             <button type="button" class="btn btn-success btn-lg new-game">New Game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aboutModalLongTitle">About the App</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="./img/about.jpg" alt="JT" class="about-img img-fluid">
+            <p>
+              Hi, I'm James Tang. Thank you for playing The Peanut Gallery! Under the original project I was exposed to jQuery DOM creation
+              for the first time, which gave me more than a few head-aches. I'm happy to say that after coming back and restarting the project
+              from step 1 the process went much smoother and quicker. 
+            </p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

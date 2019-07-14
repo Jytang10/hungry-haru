@@ -66,6 +66,9 @@ header {
   flex: 3;
   height: 100%;
   /* border: 1mm solid rgb(240, 140, 157); */
+  
+  background-image: url(./img/grass.jpg);
+  background-size: contain;
 }
 
 .game-progress img {
@@ -91,8 +94,10 @@ header {
 .game-stats {
   flex: 1;
   border: 1mm solid rgb(240, 140, 157);
+  border-radius: 25px;
   margin-right: 3%;
   text-align: center;
+  padding: 1%;
 }
 
 aside h3 {
@@ -100,7 +105,7 @@ aside h3 {
 }
 
 .cheer img {
-  width: 100%;
+  width: 70%;
 }
 
 .main-card-container {
@@ -212,6 +217,10 @@ aside h3 {
 .modal-style {
   background: aliceblue;
   color: #ec873a;
+}
+
+.about-img {
+  width: 50%;
 }
 
 @-webkit-keyframes wiggle {

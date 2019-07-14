@@ -8,6 +8,7 @@ function initializeApp() {
   $('.card-container').on('click', handleCardClick);
   $('.new-game').on('click', resetStats);
   $('.restart-game').on('click', restartGame);
+  $('.about').on('click', aboutModal);
   displayStats();
 }
 
@@ -59,33 +60,43 @@ function createAllCards() {
 }
 
 function handleCardClick( event ) {
-  $(event.currentTarget).find('.card-back').addClass('hidden');
+  if(can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('hidden')){
+    return;
+  }
   if (firstCardClicked === null) {
     firstCardClicked = $(event.currentTarget);
+    firstCardClicked.find('.card-back').addClass('hidden');
+    return;
   } else {
     secondCardClicked = $(event.currentTarget);
+    secondCardClicked.find('.card-back').addClass('hidden');
     attempts++;
   }
   if ($(firstCardClicked).find('.card-front').css('background-image') === $(secondCardClicked).find('.card-front').css('background-image')) {
+    can_click_card = false
     matches++;
     setTimeout(()=>{
       $(firstCardClicked).addClass('opacity-zero');
       $(secondCardClicked).addClass('opacity-zero');
       firstCardClicked = null;
       secondCardClicked = null;
+      can_click_card = true;
     }, 500);
     displayStats();
     if(matches === max_matches) {
     games_played++;
     $('#winModal').modal('show');
     }
+    return;
   } else if(firstCardClicked && secondCardClicked && $(firstCardClicked).find('.card-front').css('background-image') !== $(secondCardClicked).find('.card-front').css('background-image')) {
     displayStats()
+    can_click_card = false;
     setTimeout(()=>{
       $(firstCardClicked).find('.card-back').removeClass('hidden');
       $(secondCardClicked).find('.card-back').removeClass('hidden');
       firstCardClicked = null;
       secondCardClicked = null;
+      can_click_card = true;
     }, 1000);
   }
 }
@@ -124,4 +135,8 @@ function resetStats() {
 function restartGame(){ 
   games_played++;
   resetStats();
+}
+
+function aboutModal(){ 
+  $('#aboutModal').modal('show');
 }
