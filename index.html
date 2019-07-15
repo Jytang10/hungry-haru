@@ -6,6 +6,7 @@
     <title>The Peanut Gallery</title>
     <meta name="viewport" card-back="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,6 +23,7 @@
       </div>
     </div>
     <div class="game-page">
+      <!-- <embed src="./sounds/theme.mp3" autostart="true" loop="true" width="0" height="0" volume="50" /> -->
       <!-- Header -->
       <header class="container">
         <div class="logo-container">
@@ -34,9 +36,12 @@
         </div>
       </header>
       <main class="container">
-        <!-- Stats Area -->
         <section class="game-area">
+          <!-- Stats Area -->
           <aside class="game-stats container-fluid">
+            <div class="cheer">
+              <img src="./img/go.png" alt="cheer" class="img-fluid">
+            </div>
             <div class="attempts-header">
               <h3 class="attempts-header-text">Attempts</h3>
             </div>
@@ -50,16 +55,23 @@
               <h4 class="accuracy-value-text"></h4>
             </div>
             <div class="games-played-header">
-              <h3 class="games-played-header-text">Games Played</h3>
+              <h3 class="games-played-header-text"># Games</h3>
             </div>
             <div class="games-played-value">
               <h4 class="games-played-value-text"></h4>
             </div>
-            <div class="cheer">
-              <img src="./img/go.png" alt="cheer" class="img-fluid">
-            </div>
-            <div class="restart-container">
+            <div class="restart-container mb-2">
               <button class="restart-game btn btn-sm btn-warning">Restart</button>
+            </div>
+            <div class="sound-btn-container mb-2">
+              <div>
+                <i class="fas fa-volume-up"></i>
+              </div>
+              <div>
+                <i class="fas fa-music"></i>
+              </div>            
+            </div>
+            <div class="about">
               <button class="about btn btn-sm btn-outline-secondary">About</button>
             </div>
           </aside>
@@ -92,7 +104,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content lose-modal-style">
             <div class="modal-header text-center">
-              <h5 class="modal-title" id="loseModalTitle">Sorry...</h5>
+              <h5 class="modal-title" id="loseModalTitle">Good Grief...</h5>
               <!-- <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button> -->
