@@ -4,6 +4,7 @@ let app;
 
 function initializeApp() {
   // app = new Game($('body'));
+  $('.landing-btn').click(closeLanding);
   createAllCards();
   $('.card-container').on('click', handleCardClick);
   $('.new-game').on('click', resetStats);
@@ -32,6 +33,11 @@ let imageArray = [
   'sally',
   'schroeder'
 ];
+
+function closeLanding() {
+  $('.cover').hide();
+  $('.game-page').removeClass('game-page');
+}
 
 function createAllCards() {
   let doubleImages = imageArray.concat(imageArray);
@@ -114,7 +120,7 @@ function displayStats() {
   $('.accuracy-value-text').text(storeResult + '%');
   $('.games-played-value-text').text(games_played);
   move();
-  if(attempts === 30) {
+  if(attempts === 31) {
     games_played++
     $('#loseModal').modal({backdrop: 'static', keyboard: false})  
   }

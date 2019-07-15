@@ -12,116 +12,122 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <header class="container">
-      <div class="logo-container">
-        <h1 class="logo">The Peanut Gallery</h1>
+    <!-- Landing Page -->
+    <div class="cover">
+      <div class="landing-content">
+        <div class="landing-title">The Peanut Gallery</div>
+        <div class="landing-btn-container">
+          <button class="landing-btn btn btn-lg">New Game</button>
+        </div>
       </div>
-      <div class="game-progress">
-        <div class="win">
+    </div>
+    <div class="game-page">
+      <!-- Header -->
+      <header class="container">
+        <div class="logo-container">
+          <h1 class="logo">The Peanut Gallery</h1>
+        </div>
+        <div class="game-progress">
           <img src="./img/doghouse.png" alt="yay" class="win-img img-fluid">
-        </div>
-        <div class="path">
           <img src="./img/paws.gif" alt="paw" class="paw-prints img-fluid">
+          <img src="./img/bigsnoopy.png" alt="big snoopy" class="player-img img-fluid">
         </div>
-        <div class="characters">
-            <img src="./img/bigsnoopy.png" alt="big snoopy" class="player-img img-fluid">
-        </div>
-      </div>
-    </header>
-    <main class="container">
-      <!-- Stats Area -->
-      <section class="game-area">
-        <aside class="game-stats container-fluid">
-          <div class="attempts-header">
-            <h3 class="attempts-header-text">Attempts</h3>
-          </div>
-          <div class="attempts-value">
-            <h4 class="attempts-value-text"></h4>
-          </div>
-          <div class="accuracy-header">
-            <h3 class="accuracy-header-text">Accuracy</h3>
-          </div>
-          <div class="accuracy-value">
-            <h4 class="accuracy-value-text"></h4>
-          </div>
-          <div class="games-played-header">
-            <h3 class="games-played-header-text">Games Played</h3>
-          </div>
-          <div class="games-played-value">
-            <h4 class="games-played-value-text"></h4>
-          </div>
-          <div class="cheer">
-            <img src="./img/go.png" alt="cheer" class="img-fluid">
-          </div>
-          <div class="restart-container">
-            <button class="restart-game btn btn-warning">Restart</button>
-            <button class="about btn btn-outline-secondary">About</button>
-          </div>
-        </aside>
-        <!-- Game Area -->
-        <div class="main-card-container container-fluid"></div>
-      </section>
-    </main>
-    <!-- Win Modal -->
-    <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="winModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content modal-style">
-          <div class="modal-header text-center">
-            <h1 class="modal-title" id="winModalTitle">YOU WIN!!!</h1>
-            <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body text-center">
-            <h2>Thank you for playing. Would you like to play again?</h2>
-            <img src="./img/bravo.png" alt="bravo" class="img-fluid">
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-success btn-lg new-game">New Game</button>
+      </header>
+      <main class="container">
+        <!-- Stats Area -->
+        <section class="game-area">
+          <aside class="game-stats container-fluid">
+            <div class="attempts-header">
+              <h3 class="attempts-header-text">Attempts</h3>
+            </div>
+            <div class="attempts-value">
+              <h4 class="attempts-value-text"></h4>
+            </div>
+            <div class="accuracy-header">
+              <h3 class="accuracy-header-text">Accuracy</h3>
+            </div>
+            <div class="accuracy-value">
+              <h4 class="accuracy-value-text"></h4>
+            </div>
+            <div class="games-played-header">
+              <h3 class="games-played-header-text">Games Played</h3>
+            </div>
+            <div class="games-played-value">
+              <h4 class="games-played-value-text"></h4>
+            </div>
+            <div class="cheer">
+              <img src="./img/go.png" alt="cheer" class="img-fluid">
+            </div>
+            <div class="restart-container">
+              <button class="restart-game btn btn-sm btn-warning">Restart</button>
+              <button class="about btn btn-sm btn-outline-secondary">About</button>
+            </div>
+          </aside>
+          <!-- Game Area -->
+          <div class="main-card-container container-fluid"></div>
+        </section>
+      </main>
+      <!-- Win Modal -->
+      <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="winModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modal-style">
+            <div class="modal-header text-center">
+              <h1 class="modal-title" id="winModalTitle">YOU WIN!!!</h1>
+              <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              <h2>Thank you for playing. Would you like to play again?</h2>
+              <img src="./img/bravo.png" alt="bravo" class="img-fluid">
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-success btn-lg new-game">New Game</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Lose Modal -->
-    <div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="loseModalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content lose-modal-style">
-          <div class="modal-header text-center">
-            <h5 class="modal-title" id="loseModalTitle">Sorry...</h5>
-            <!-- <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button> -->
-          </div>
-          <div class="modal-body text-center">
-            <h2>Snoopy did not reach the dog house in time. Please try again!</h2>
-            <img src="./img/sorry.png" alt="sorry" class="img-fluid">
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-success btn-lg new-game" data-dismiss="modal">New Game</button>
+      <!-- Lose Modal -->
+      <div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="loseModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content lose-modal-style">
+            <div class="modal-header text-center">
+              <h5 class="modal-title" id="loseModalTitle">Sorry...</h5>
+              <!-- <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+            </div>
+            <div class="modal-body text-center">
+              <h2>Snoopy did not reach the dog house in time. Please try again!</h2>
+              <img src="./img/sorry.png" alt="sorry" class="img-fluid">
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-success btn-lg new-game" data-dismiss="modal">New Game</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- About Modal -->
-    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="aboutModalLongTitle">About the App</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body text-center">
-            <img src="./img/about.jpg" alt="JT" class="about-img img-fluid">
-            <p>
-              Hi, I'm James Tang. Thank you for playing The Peanut Gallery! Under the original project I was exposed to jQuery DOM creation
-              for the first time, which gave me more than a few head-aches. I'm happy to say that after coming back and restarting the project
-              from step 1 the process went much smoother and quicker. 
-            </p>
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      <!-- About Modal -->
+      <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="aboutModalLongTitle">About the App</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="./img/about.jpg" alt="JT" class="about-img img-fluid">
+              <p>
+                Hi, I'm James Tang. Thank you for playing The Peanut Gallery! Under the original project I was exposed to jQuery DOM creation
+                for the first time, which gave me more than a few head-aches. I'm happy to say that after coming back and restarting the project
+                from step 1 the process went much smoother and quicker. 
+              </p>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
           </div>
         </div>
       </div>
