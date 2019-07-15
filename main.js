@@ -13,6 +13,7 @@ function initializeApp() {
   $('.volume-btn').on('click', muteSounds);
   $('.close').on('click', ()=>{win.pause()});
   $('.about').on('click', aboutModal);
+  $(()=>{$('[data-toggle="tooltip"]').tooltip()});
   displayStats();
 }
 
