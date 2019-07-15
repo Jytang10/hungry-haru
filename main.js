@@ -9,6 +9,9 @@ function initializeApp() {
   $('.card-container').on('click', handleCardClick);
   $('.new-game').on('click', resetStats);
   $('.restart-game').on('click', restartGame);
+  $('.music-btn').on('click', toggleBGM);
+  $('.volume-btn').on('click', muteSounds);
+  $('.close').on('click', ()=>{win.pause()});
   $('.about').on('click', aboutModal);
   displayStats();
 }
@@ -18,7 +21,6 @@ let secondCardClicked = null;
 let can_click_card = true;
 let matches = 0;
 let max_matches = 9;
-let max_attempts = 35;
 let attempts = 0;
 let accuracy = 0;
 let games_played = 0;
@@ -33,6 +35,13 @@ let imageArray = [
   'sally',
   'schroeder'
 ];
+let paused;
+let lost = false;
+let mute = false;
+const bgm = new Audio("./sounds/theme.mp3");
+let tada = new Audio("./sounds/ta-da.mp3");
+const win = new Audio("./sounds/theme-ska.mp3");
+const lose = new Audio("./sounds/good-grief.mp3");
 
 function closeLanding() {
   $('.cover').hide();
@@ -66,7 +75,7 @@ function createAllCards() {
 }
 
 function handleCardClick( event ) {
-  if(can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('hidden')){
+  if(can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('hidden') || lost === true){
     return;
   }
   if (firstCardClicked === null) {
@@ -79,6 +88,7 @@ function handleCardClick( event ) {
     attempts++;
   }
   if ($(firstCardClicked).find('.card-front').css('background-image') === $(secondCardClicked).find('.card-front').css('background-image')) {
+    playSuccess();
     can_click_card = false
     matches++;
     setTimeout(()=>{
@@ -90,8 +100,11 @@ function handleCardClick( event ) {
     }, 500);
     displayStats();
     if(matches === max_matches) {
+    setTimeout(()=>{
+      winSound();
+    }, 500);
     games_played++;
-    $('#winModal').modal('show');
+    $('#winModal').modal({backdrop: 'static', keyboard: false});
     }
     return;
   } else if(firstCardClicked && secondCardClicked && $(firstCardClicked).find('.card-front').css('background-image') !== $(secondCardClicked).find('.card-front').css('background-image')) {
@@ -116,13 +129,18 @@ function calculateAccuracy() {
 
 function displayStats() {
   let storeResult = calculateAccuracy().toFixed(0);
-  $('.attempts-value-text').text(attempts);
+  $('.attempts-value-text').text(attempts + ' / 30');
   $('.accuracy-value-text').text(storeResult + '%');
   $('.games-played-value-text').text(games_played);
   move();
-  if(attempts === 31) {
+  if(attempts === 30) {
+    lost = true;
+    bgm.pause();
+    paused = true;
+    loseSound();
     games_played++
-    $('#loseModal').modal({backdrop: 'static', keyboard: false})  
+    $('.card-container').find('.card-back').removeClass('card-back');
+    $('#loseModal').modal('show');
   }
 }
 
@@ -131,6 +149,8 @@ function removeAllCards() {
 }
 
 function resetStats() {
+  lost = false;
+  win.pause();
   matches = 0;
   accuracy = 0;
   attempts = 0;
@@ -184,5 +204,44 @@ function move() {
       player.addClass('match9-move')
       break;
     default:
+  }
+}
+
+function toggleBGM() {
+  bgm.loop = true;
+  bgm.volume = .3;
+  if (paused === false) {
+    bgm.pause();
+    paused = true;
+  } else {
+    bgm.play();
+    paused = false;
+  }
+}
+
+function playSuccess() {
+  tada.volume = .3;
+  tada.play();
+}
+
+function winSound() {
+  bgm.pause();
+  paused = true;
+  win.volume = .4;
+  win.play();
+}
+
+function loseSound() {
+  lose.volume = .4;
+  lose.play();
+}
+
+function muteSounds () {
+  if(mute === false) {
+    tada.muted = true;
+    mute = true;
+  } else {
+    tada.muted = false;
+    mute = false;
   }
 }
