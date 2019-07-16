@@ -13,6 +13,7 @@ function initializeApp() {
   $('.volume-btn').on('click', muteSounds);
   $('.close').on('click', ()=>{win.pause()});
   $('.about').on('click', aboutModal);
+  $(()=>{$('[data-toggle="tooltip"]').tooltip()});
   displayStats();
 }
 
@@ -64,14 +65,16 @@ function createAllCards() {
   }
   let shuffledArray = shuffle(doubleImages);
 
+  let cardGroup = $('<div>').addClass('card-group');
   for(let index = 0; index < 18; index++){
       let cardContainer = $('<div>').addClass('card-container');
       let randomImg = shuffledArray[index];
       let cardFront = $('<div>').addClass('card-front card-face').addClass(randomImg);
       let cardBack = $('<div>').addClass('card-back card-face');
       cardContainer.append(cardFront, cardBack);
-      $('.main-card-container').append(cardContainer);
+      cardGroup.append(cardContainer);
   }
+  $('.main-card-container').append(cardGroup);
 }
 
 function handleCardClick( event ) {
@@ -145,7 +148,7 @@ function displayStats() {
 }
 
 function removeAllCards() {
-  $( ".card-container" ).remove();
+  $( ".card-group" ).remove();
 }
 
 function resetStats() {
@@ -213,9 +216,11 @@ function toggleBGM() {
   if (paused === false) {
     bgm.pause();
     paused = true;
+    $('.music-icon').css({'color':'gray'});
   } else {
     bgm.play();
     paused = false;
+    $('.music-icon').css({'color':'#fbb931'});
   }
 }
 
@@ -240,8 +245,10 @@ function muteSounds () {
   if(mute === false) {
     tada.muted = true;
     mute = true;
+    $('.vol-icon').css({'color':'gray'});
   } else {
     tada.muted = false;
     mute = false;
+    $('.vol-icon').css({'color':'#fbb931'});
   }
 }
