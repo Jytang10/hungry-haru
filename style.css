@@ -34,6 +34,41 @@ button {
   font-family: 'Snoopy', 'Roboto', sans-serif;
 }
 
+.warning {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  justify-content: center;
+  background-image: url("./img/peanuts.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.warning-content {
+  height: 40%;
+  width: 50%;
+  position: relative;
+  top: 25%;
+  left: 25%;
+  text-align: center;
+}
+
+.warning-text {
+  font-weight: 500;
+  font-size: 2rem;
+  z-index: 1;
+  color: #fbb931;
+}
+
+.rotate {
+  /* left: 20%;
+  top: 40%; */
+  /* position: absolute; */
+}
+
 .cover {
   position: fixed;
   width: 100%;
@@ -150,7 +185,6 @@ header {
   flex: 1;
   border: 1mm solid rgb(240, 140, 157);
   border-radius: 25px;
-  margin-right: 3%;
   text-align: center;
   padding: 1%;
 }
@@ -489,6 +523,12 @@ aside h3 {
   100% {transform: rotate(0deg);}
 }
 
+@media (orientation: portrait) {
+  .warning {
+    display: initial;
+  }
+}
+
 @media screen and (max-width: 1291px) {
   .landing-title {
     font-size: 5rem;
@@ -528,11 +568,5 @@ aside h3 {
 @media screen and (max-width: 870px) {
   .logo {
     font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    opacity: 0;
   }
 }
