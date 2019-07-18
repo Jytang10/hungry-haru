@@ -38,7 +38,7 @@ let paused;
 let lost = false;
 let mute = false;
 const bgm = new Audio("./sounds/theme.mp3");
-let tada = new Audio("./sounds/ta-da.mp3");
+let jingle = new Audio("./sounds/jingle.wav");
 const win = new Audio("./sounds/theme-ska.mp3");
 const lose = new Audio("./sounds/good-grief.mp3");
 let progress = 0
@@ -204,8 +204,8 @@ function toggleBGM() {
 }
 
 function playSuccess() {
-  tada.volume = .3;
-  tada.play();
+  jingle.volume = .3;
+  jingle.play();
 }
 
 function winSound() {
@@ -223,11 +223,11 @@ function loseSound() {
 
 function muteSounds () {
   if(mute === false) {
-    tada.muted = true;
+    jingle.muted = true;
     mute = true;
     $('.volume-icon').css({'color':'gray'});
   } else {
-    tada.muted = false;
+    jingle.muted = false;
     mute = false;
     $('.volume-icon').css({'color':'#fbb931'});
   }
