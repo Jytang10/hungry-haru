@@ -1,9 +1,4 @@
 
-* {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
-}
 
 @font-face {
   font-family: 'Snoopy';
@@ -63,12 +58,6 @@ button {
   color: #fbb931;
 }
 
-.rotate {
-  /* left: 20%;
-  top: 40%; */
-  /* position: absolute; */
-}
-
 .cover {
   position: fixed;
   width: 100%;
@@ -122,15 +111,8 @@ button {
 header {
   display: flex;
   position: relative;
-  width: 90%;
   height: 15vh;
-  margin-left: 2px;
-  margin-right: 2px;
   align-items: center;
-}
-
-.header-content {
-  margin-top: 2%;
 }
 
 .logo-container, .game-progress {
@@ -165,12 +147,7 @@ header {
   opacity: .75;
   filter: drop-shadow(0 0 0.65rem red);
   height: 90% !important;
-}
-
-.player-img {
-  position: absolute;
-  z-index: 100;
-  right: 5%;
+  z-index: -.5;
 }
 
 .game-area {
@@ -206,7 +183,7 @@ aside h3 {
   width: 30%;
 }
 
-.vol-icon {
+.volume-icon {
   color:#fbb931;
 }
 
@@ -216,9 +193,7 @@ aside h3 {
 
 .main-card-container {
   flex: 6;
-  -webkit-perspective: 1000px;
   perspective: 1000px;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -230,9 +205,7 @@ aside h3 {
   position: relative;
   width: 14.66%;
   height: 100%;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: all 600ms;
   transition: all 600ms ease-in-out;
   z-index: 20;
   float: left;
@@ -246,7 +219,6 @@ aside h3 {
 }
 
 .card-face {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 2px;
 }
@@ -257,31 +229,23 @@ aside h3 {
   padding-top: 100%;
 }
 
-.card-back, .card-front, .snoopy, .woodstock, .charlie, .linus, .lucy, .pepper, .pig, .sally, .schroeder {
+.card-back, .card-front {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
+  position: absolute;
 }
 
 .card-back {
-  position: absolute;
   background-image: url('./img/cover.png');
 }
 
-.card-front {
-  position: absolute;
-}
-
 .card-container:hover {
-  -webkit-animation-name: wiggle;
-  -ms-animation-name: wiggle;
-  -ms-animation-duration: 500ms;
-  -webkit-animation-duration: 500ms;
-  -webkit-animation-iteration-count: 1;
-  -ms-animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease-in-out;
-  -ms-animation-timing-function: ease-in-out;
+  animation-name: wiggle;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 }
 
 .snoopy {
@@ -324,10 +288,6 @@ aside h3 {
   opacity: 0;
 }
 
-.hidden {
-  display: none;
-}
-
 .modal-style {
   background: aliceblue;
   color: #ec873a;
@@ -342,49 +302,9 @@ aside h3 {
   width: 50%;
 }
 
-.match1-move {
-  animation: match1-mover 4s;
-  animation-fill-mode: forwards;
-}
-
-.match2-move {
-  animation: match2-mover 4s;
-  animation-fill-mode: forwards;
-}
-
-.match3-move {
-  animation: match3-mover 4s;
-  animation-fill-mode: forwards;
-}
-
-.match4-move {
-  animation: match4-mover 4s;
-  animation-fill-mode: forwards;
-}
-
-.match5-move {
-  animation: match5-mover 4s;
-  animation-fill-mode: forwards;
-}
-
-.match6-move {
-  animation: match6-mover 4s;
-  animation-fill-mode: forwards;
-}
-
-.match7-move {
-  animation: match7-mover 4s;
-  animation-fill-mode: forwards;
-}
-
-.match8-move {
-  animation: match8-mover 4s;
-  animation-fill-mode: forwards;
-}
-
-.match9-move {
-  animation: match9-mover 4s;
-  animation-fill-mode: forwards;
+.about-btn {
+  background-color: rgb(240, 140, 157);
+  color: white;
 }
 
 @keyframes pop-in {
@@ -409,117 +329,11 @@ aside h3 {
   }
 }
 
-@keyframes match1-mover
-{
-    from {
-      right: 0%;
-    }
-    to {
-        right: 7%;
-    }
-}
-
-@keyframes match2-mover
-{
-    from {
-      right: 7%;
-    }
-    to {
-        right: 14%;
-    }
-}
-
-@keyframes match3-mover
-{
-    from {
-      right: 14%;
-    }
-    to {
-        right: 21%;
-    }
-}
-
-@keyframes match4-mover
-{
-    from {
-      right: 21%;
-    }
-    to {
-        right: 28%;
-    }
-}
-
-@keyframes match5-mover
-{
-    from {
-      right: 28%;
-    }
-    to {
-        right: 35%;
-    }
-}
-
-@keyframes match6-mover
-{
-    from {
-      right: 35%;
-    }
-    to {
-        right: 42%;
-    }
-}
-
-@keyframes match7-mover
-{
-    from {
-      right: 42%;
-    }
-    to {
-        right: 49%;
-    }
-}
-
-@keyframes match8-mover
-{
-    from {
-      right: 49%;
-    }
-    to {
-        right: 56%;
-    }
-}
-
-@keyframes match9-mover
-{
-    from {
-      right: 56%;
-    }
-    to {
-        right: 63%;
-    }
-}
-
-@-webkit-keyframes wiggle {
-  0% {-webkit-transform: rotate(5deg);}
-  25% {-webkit-transform: rotate(-5deg);}
-  50% {-webkit-transform: rotate(10deg);}
-  75% {-webkit-transform: rotate(-2.5deg);}
-  100% {-webkit-transform: rotate(0deg);}
-}
-
-@-ms-keyframes wiggle {
-  0% {-ms-transform: rotate(0.5deg);}
-  25% {-ms-transform: rotate(-0.5deg);}
-  50% {-ms-transform: rotate(0.75deg);}
-  75% {-ms-transform: rotate(-2.5deg);}
-  100% {-ms-transform: rotate(0deg);}
-}
-
 @keyframes wiggle {
-  0% {transform: rotate(5deg);}
-  25% {transform: rotate(-5deg);}
-  50% {transform: rotate(10deg);}
-  75% {transform: rotate(-2.5deg);}
+  0% {transform: rotate(3deg);}
+  25% {transform: rotate(-3deg);}
+  50% {transform: rotate(6deg);}
+  75% {transform: rotate(-1.5deg);}
   100% {transform: rotate(0deg);}
 }
 

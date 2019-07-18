@@ -17,7 +17,7 @@
     <div class="warning">
       <div class="warning-content">
         <div class="warning-text">Please turn your device to landscape orientation for the best game experience!</div>
-        <img src="./img/rotate.gif" alt="rotate" class="rotate img-fluid">
+        <img src="./img/rotate.gif" alt="rotate" class="img-fluid">
       </div>
     </div>
     <!-- Landing Page -->
@@ -36,9 +36,9 @@
           <h1 class="logo">The Peanut Gallery</h1>
         </div>
         <div class="game-progress">
-          <img src="./img/doghouse.png" alt="yay" class="win-img img-fluid">
+          <img src="./img/doghouse.png" alt="yay" class="img-fluid">
           <img src="./img/paws.gif" alt="paw" class="paw-prints img-fluid">
-          <img src="./img/bigsnoopy.png" alt="big snoopy" class="player-img img-fluid">
+          <!-- <img src="./img/bigsnoopy.png" alt="big snoopy" class="player-img img-fluid"> -->
         </div>
       </header>
       <main class="container">
@@ -48,37 +48,37 @@
             <div class="cheer">
               <img src="./img/go.png" alt="cheer" class="img-fluid" data-toggle="tooltip" data-html="true" title="Match all the pairs so Snoopy can go home!">
             </div>
-            <div class="attempts-header">
-              <h3 class="attempts-header-text">Attempts</h3>
+            <div>
+              <h3>Attempts</h3>
             </div>
-            <div class="attempts-value">
-              <h4 class="attempts-value-text"></h4>
+            <div>
+              <h4 class="attempts-value"></h4>
             </div>
-            <div class="accuracy-header">
-              <h3 class="accuracy-header-text">Accuracy</h3>
+            <div>
+              <h3>Accuracy</h3>
             </div>
-            <div class="accuracy-value">
-              <h4 class="accuracy-value-text"></h4>
+            <div>
+              <h4 class="accuracy-value"></h4>
             </div>
-            <div class="games-played-header">
-              <h3 class="games-played-header-text"># Games</h3>
+            <div>
+              <h3># Games</h3>
             </div>
-            <div class="games-played-value">
-              <h4 class="games-played-value-text"></h4>
+            <div>
+              <h4 class="games-played-value"></h4>
             </div>
-            <div class="restart-container mb-2">
+            <div class="mb-3">
               <button class="restart-game btn btn-sm btn-warning">Restart</button>
             </div>
-            <div class="sound-btn-container mb-2">
+            <div class="sound-btn-container mb-3">
               <div class="volume-btn mr-1">
-                <i class="fas fa-volume-up vol-icon"></i>
+                <i class="fas fa-volume-up volume-icon"></i>
               </div>
               <div class="music-btn ml-1">
                 <i class="fas fa-music music-icon"></i>
               </div>            
             </div>
             <div class="about">
-              <button class="about btn btn-sm btn-outline-secondary">About</button>
+              <button class="btn btn-sm about-btn">About</button>
             </div>
           </aside>
           <!-- Game Area -->
@@ -91,9 +91,6 @@
           <div class="modal-content modal-style">
             <div class="modal-header text-center">
               <h1 class="modal-title" id="winModalTitle">YOU WIN!!!</h1>
-              <!-- <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button> -->
             </div>
             <div class="modal-body text-center">
               <h2>Thank you for playing. Would you like to play again?</h2>
@@ -111,9 +108,6 @@
           <div class="modal-content lose-modal-style">
             <div class="modal-header text-center">
               <h5 class="modal-title" id="loseModalTitle">Good Grief...</h5>
-              <!-- <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button> -->
             </div>
             <div class="modal-body text-center">
               <h2>Snoopy did not reach the dog house in time. Please try again!</h2>
