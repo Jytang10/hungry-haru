@@ -58,7 +58,7 @@ function createProgressIcon() {
     'transition': 'right 1s ease',
     'zIndex': '2'
   });
-  $('.game-progress').append(progressIcon);
+  $('.player-icon-container').append(progressIcon);
 }
 
 function createAllCards() {

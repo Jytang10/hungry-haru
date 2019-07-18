@@ -31,17 +31,10 @@
     </div>
     <div class="game-page">
       <!-- Header -->
-      <header class="container">
-        <div class="logo-container">
+      <header class="container-fluid logo-container">
           <h1 class="logo">The Peanut Gallery</h1>
-        </div>
-        <div class="game-progress">
-          <img src="./img/doghouse.png" alt="yay" class="img-fluid">
-          <img src="./img/paws.gif" alt="paw" class="paw-prints img-fluid">
-          <!-- <img src="./img/bigsnoopy.png" alt="big snoopy" class="player-img img-fluid"> -->
-        </div>
       </header>
-      <main class="container">
+      <main class="container-fluid">
         <section class="game-area">
           <!-- Stats Area -->
           <aside class="game-stats container-fluid">
@@ -82,7 +75,15 @@
             </div>
           </aside>
           <!-- Game Area -->
-          <div class="main-card-container container-fluid"></div></div>
+            <div class="gameboard">
+              <div class="game-progress">
+                <div><img src="./img/doghouse.png" alt="yay" class="img-fluid"></div>
+                <div><img src="./img/paws.gif" alt="paw" class="paw-prints img-fluid"></div>
+                <div class="player-icon-container"></div>
+              </div>
+              <div class="main-card-container container-fluid"></div>
+            </div>
+          </div>
         </section>
       </main>
       <!-- Win Modal -->

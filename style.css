@@ -111,50 +111,28 @@ button {
 header {
   display: flex;
   position: relative;
-  height: 15vh;
+  height: 10vh;
   align-items: center;
 }
 
-.logo-container, .game-progress {
-  display: flex;
-}
-
 .logo-container {
-  flex: 1;
+  justify-content: center;
 }
 
 .logo {
   font-weight: 500;
-  font-size: 3.5rem;
+  font-size: 5rem;
   margin: 10px;
   text-align: center;
   color: #fbb931;
   text-shadow: 0.9px 0.9px black;
 }
 
-.game-progress {
-  flex: 2;
-  height: 100%;
-  position: relative;
-  justify-content: center;
-}
-
-.game-progress img {
-  height: 100%;
-}
-
-.paw-prints {
-  opacity: .75;
-  filter: drop-shadow(0 0 0.65rem red);
-  height: 90% !important;
-  z-index: -.5;
-}
-
 .game-area {
   display: flex;
   width: 90%;
   margin: auto;
-  min-height: 85vh;
+  min-height: 90vh;
   align-items: center;
 }
 
@@ -191,10 +169,27 @@ aside h3 {
   color:gray;
 }
 
-.main-card-container {
+.gameboard {
   flex: 6;
+}
+
+.main-card-container {
   perspective: 1000px;
   transform-style: preserve-3d;
+}
+
+.game-progress {
+  position: relative;
+  display: flex;
+}
+
+.game-progress img {
+  height: 100%;
+}
+
+.paw-prints {
+  opacity: .55;
+  filter: drop-shadow(0 0 0.65rem red);
 }
 
 .card-group {
@@ -211,7 +206,7 @@ aside h3 {
   float: left;
   margin: 1%;
   cursor: pointer;
-  filter: drop-shadow(0 0 0.1rem red);
+  filter: drop-shadow(0 0 1px red);
 }
 
 .no-cursor {
@@ -362,12 +357,6 @@ aside h3 {
 }
 
 @media screen and (max-width: 993px) {
-  .logo {
-    font-size: 2.4rem;
-  }
-  .player-img {
-    right: 0%;
-  }
   .paw-prints {
     height: 75% !important;
   }
@@ -380,7 +369,5 @@ aside h3 {
 }
 
 @media screen and (max-width: 870px) {
-  .logo {
-    font-size: 2rem;
-  }
+
 }
