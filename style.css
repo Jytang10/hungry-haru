@@ -114,7 +114,7 @@ button {
 
 .logo {
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 10px;
   text-align: center;
   color: #fbb931;
@@ -125,6 +125,7 @@ button {
   display: flex;
   margin: auto;
   align-items: center;
+  height: 100vh;
 }
 
 .title-stats-container {
@@ -143,7 +144,7 @@ aside h3 {
 }
 
 .cheer img {
-  width: 80%;
+  width: 50%;
 }
 
 .sound-btn-container div {
@@ -174,21 +175,17 @@ aside h3 {
 
 .game-progress {
   position: relative;
-  display: flex;
+  border: 1mm solid rgb(240, 140, 157);
+  border-radius: 25px;
+  text-align: center;
+  padding: 1%;
 }
 
 .game-progress img {
-  height: 65%;
+  width: 50%;
 }
 
-/* .doghouse {
-  position: absolute;
-  right: 10%;
-} */
-
 .paw-prints {
-  /* position: absolute;
-  right: 5%; */
   opacity: .55;
   filter: drop-shadow(0 0 0.65rem red);
 }
@@ -279,6 +276,23 @@ aside h3 {
   background-image: url('./img/cards/schroeder.jpg');
 }
 
+.progress-container {
+  flex: 1;
+}
+
+.progress-header-container {
+  justify-content: center;
+}
+
+.progress-header {
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 10px;
+  text-align: center;
+  color: #fbb931;
+  text-shadow: 0.9px 0.9px black;
+}
+
 .opacity-zero {
   opacity: 0;
 }
@@ -356,18 +370,48 @@ aside h3 {
   }
 }
 
-@media screen and (max-width: 993px) {
-  .paw-prints {
-    height: 75% !important;
-  }
-}
-
 @media screen and (max-width: 820px) {
   .landing-btn {
     font-size: 100%;
   }
 }
 
-@media screen and (max-width: 870px) {
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : landscape) { 
+  .logo {
+    font-size: 1.5rem;
+  }
+  aside h3 {
+    font-size: 1.5rem;
+  }
+  aside h4 {
+    font-size: 1rem;
+  }
+  aside .btn-sm {
+    font-size: .5rem;
+  }
+  .card-container:hover {
+    animation-name: none;
+  }
+}
 
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape) { 
+  .card-container:hover {
+    animation-name: none;
+  }
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+  .card-container:hover {
+    animation-name: none;
+  }
 }
