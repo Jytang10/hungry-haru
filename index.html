@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" card-back="IE=edge">
+    <title>The Peanut Gallery</title>
+    <meta name="viewport" card-back="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <!-- Vertical Mode Warning Page -->
+    <div class="warning">
+      <div class="warning-content">
+        <div class="warning-text">Please turn your device to landscape orientation for the best game experience!</div>
+        <img src="./img/rotate.gif" alt="rotate" class="img-fluid">
+      </div>
+    </div>
+    <!-- Landing Page -->
+    <div class="cover">
+      <div class="landing-content">
+        <div class="landing-title">The Peanut Gallery</div>
+        <div class="landing-btn-container">
+          <button class="landing-btn btn btn-lg">New Game</button>
+        </div>
+      </div>
+    </div>
+      <!-- Game Page -->
+      <div class="game-page container-fluid">
+        <main class="game-area">
+          <!-- Title & Stats Area -->
+          <div class="title-stats-container">
+            <div class="logo-container"><h1 class="logo">The Peanut Gallery</h1></div>
+              <aside class="game-stats container-fluid">
+                <div class="cheer">
+                  <img src="./img/go.png" alt="cheer" class="img-fluid" data-toggle="tooltip" data-html="true" title="Match all the pairs so Snoopy can go home!">
+                </div>
+                <div>
+                  <h3>Attempts</h3>
+                </div>
+                <div>
+                  <h4 class="attempts-value"></h4>
+                </div>
+                <div>
+                  <h3>Accuracy</h3>
+                </div>
+                <div>
+                  <h4 class="accuracy-value"></h4>
+                </div>
+                <div>
+                  <h3># Games</h3>
+                </div>
+                <div>
+                  <h4 class="games-played-value"></h4>
+                </div>
+                <div class="mb-2">
+                  <button class="restart-game btn btn-sm btn-warning">Restart</button>
+                </div>
+                <div class="sound-btn-container mb-2">
+                  <div class="volume-btn mr-1">
+                    <i class="fas fa-volume-up volume-icon"></i>
+                  </div>
+                  <div class="music-btn ml-1">
+                    <i class="fas fa-music music-icon"></i>
+                  </div>            
+                </div>
+                <div class="about mb-2">
+                  <button class="btn btn-sm about-btn">About</button>
+                </div>
+              </aside>
+            </div>
+            <!-- Gameboard -->
+            <div class="gameboard">
+              <!-- <div class="game-progress">
+                <div><img src="./img/doghouse.png" alt="yay" class="doghouse img-fluid"></div>
+                <div><img src="./img/paws.gif" alt="paw" class="paw-prints img-fluid"></div>
+                <div class="player-icon-container"></div>
+              </div> -->
+            <div class="main-card-container container-fluid"></div>
+          </div>
+          <!-- Progress Area -->
+          <div class="progress-container">
+            <div class="progress-header-container"><h2 class="progress-header">Progress</h2></div>
+            <div class="game-progress container-fluid">
+              <div><img src="./img/doghouse.png" alt="yay" class="doghouse img-fluid"></div>
+              <div><img src="./img/pawsup.gif" alt="paw" class="paw-prints img-fluid"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <!-- Win Modal -->
+      <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="winModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modal-style">
+            <div class="modal-header text-center">
+              <h1 class="modal-title" id="winModalTitle">YOU WIN!!!</h1>
+            </div>
+            <div class="modal-body text-center">
+              <h2>Thank you for playing. Would you like to play again?</h2>
+              <img src="./img/bravo.png" alt="bravo" class="img-fluid">
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-success btn-lg new-game">New Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Lose Modal -->
+      <div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="loseModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content lose-modal-style">
+            <div class="modal-header text-center">
+              <h5 class="modal-title" id="loseModalTitle">Good Grief...</h5>
+            </div>
+            <div class="modal-body text-center">
+              <h2>Snoopy did not reach the dog house in time. Please try again!</h2>
+              <img src="./img/sorry.png" alt="sorry" class="img-fluid">
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-success btn-lg new-game" data-dismiss="modal">New Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- About Modal -->
+      <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="aboutModalLongTitle">About the App</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="./img/about.jpg" alt="JT" class="about-img img-fluid">
+              <p>
+                Hi, I'm James Tang. Thank you for playing The Peanut Gallery! This projet uses HTML, CSS, JavaScript and jQuery for game display and game play functionality. 
+                The first time I coded the game I had difficulties understanding jQuery DOM creation, so a few months later I went back to re-do the game and refactor it in OOP.
+                The coding went much smoother and I was happy to see how my skills had grown.
+              </p>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
