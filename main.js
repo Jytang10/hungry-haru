@@ -5,6 +5,7 @@ let app;
 function initializeApp() {
   // app = new Game($('body'));
   $('.landing-btn').click(closeLanding);
+  createProgressIcon();
   createAllCards();
   $('.card-container').on('click', handleCardClick);
   $('.new-game').on('click', resetStats);
@@ -43,10 +44,21 @@ const bgm = new Audio("./sounds/theme.mp3");
 let tada = new Audio("./sounds/ta-da.mp3");
 const win = new Audio("./sounds/theme-ska.mp3");
 const lose = new Audio("./sounds/good-grief.mp3");
+let progress = 0
 
 function closeLanding() {
   $('.cover').hide();
   $('.game-page').removeClass('game-page');
+}
+
+function createProgressIcon() {
+  let progressIcon = $('<img>').addClass('progress-icon').attr({'src': './img/bigsnoopy.png'}).css({
+    'position': 'absolute',
+    'right': progress + "%",
+    'transition': 'right 1s ease',
+    'zIndex': '2'
+  });
+  $('.player-icon-container').append(progressIcon);
 }
 
 function createAllCards() {
@@ -78,19 +90,21 @@ function createAllCards() {
 }
 
 function handleCardClick( event ) {
-  if(can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('hidden') || lost === true){
+  if(can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('d-none') || lost === true){
     return;
   }
   if (firstCardClicked === null) {
     firstCardClicked = $(event.currentTarget);
-    firstCardClicked.find('.card-back').addClass('hidden');
+    firstCardClicked.find('.card-back').addClass('d-none');
     return;
   } else {
     secondCardClicked = $(event.currentTarget);
-    secondCardClicked.find('.card-back').addClass('hidden');
+    secondCardClicked.find('.card-back').addClass('d-none');
     attempts++;
   }
   if ($(firstCardClicked).find('.card-front').css('background-image') === $(secondCardClicked).find('.card-front').css('background-image')) {
+    progress += 7;
+    $('.progress-icon').css({'right': progress + "%"});
     playSuccess();
     can_click_card = false
     matches++;
@@ -114,8 +128,8 @@ function handleCardClick( event ) {
     displayStats()
     can_click_card = false;
     setTimeout(()=>{
-      $(firstCardClicked).find('.card-back').removeClass('hidden');
-      $(secondCardClicked).find('.card-back').removeClass('hidden');
+      $(firstCardClicked).find('.card-back').removeClass('d-none');
+      $(secondCardClicked).find('.card-back').removeClass('d-none');
       firstCardClicked = null;
       secondCardClicked = null;
       can_click_card = true;
@@ -123,7 +137,7 @@ function handleCardClick( event ) {
   }
 }
 
-function calculateAccuracy() {
+function calculateAccuracy() {          //use params
   if (attempts) {
     accuracy = ((matches / attempts) * 100)
   } 
@@ -132,10 +146,9 @@ function calculateAccuracy() {
 
 function displayStats() {
   let storeResult = calculateAccuracy().toFixed(0);
-  $('.attempts-value-text').text(attempts + ' / 30');
-  $('.accuracy-value-text').text(storeResult + '%');
-  $('.games-played-value-text').text(games_played);
-  move();
+  $('.attempts-value').text(attempts + ' / 30');
+  $('.accuracy-value').text(storeResult + '%');
+  $('.games-played-value').text(games_played);
   if(attempts === 30) {
     lost = true;
     bgm.pause();
@@ -157,13 +170,14 @@ function resetStats() {
   matches = 0;
   accuracy = 0;
   attempts = 0;
+  progress = 0;
   firstCardClicked = null;
   secondCardClicked = null;
   displayStats();
   removeAllCards();
   createAllCards();
   $('.card-container').on('click', handleCardClick);
-  $('.player-img').removeClass('match1-move match2-move match3-move match4-move match5-move match6-move match7-move match8-move match9-move');
+  $('.progress-icon').css({'right': progress + "%",});
   $('#winModal').modal('hide');
 }
 
@@ -176,43 +190,9 @@ function aboutModal(){
   $('#aboutModal').modal('show');
 }
 
-function move() {
-  let player = $('.player-img');
-  switch(matches) {
-    case 1:
-      player.addClass('match1-move')
-      break;
-    case 2:
-      player.addClass('match2-move')
-      break;
-    case 3:
-      player.addClass('match3-move')
-      break;
-    case 4:
-      player.addClass('match4-move')
-      break;
-    case 5:
-      player.addClass('match5-move')
-      break;
-    case 6:
-      player.addClass('match6-move')
-      break;
-    case 7:
-      player.addClass('match7-move')
-      break;
-    case 8:
-      player.addClass('match8-move')
-      break;
-    case 9:
-      player.addClass('match9-move')
-      break;
-    default:
-  }
-}
-
 function toggleBGM() {
   bgm.loop = true;
-  bgm.volume = .3;
+  bgm.volume = .7;
   if (paused === false) {
     bgm.pause();
     paused = true;
@@ -245,10 +225,10 @@ function muteSounds () {
   if(mute === false) {
     tada.muted = true;
     mute = true;
-    $('.vol-icon').css({'color':'gray'});
+    $('.volume-icon').css({'color':'gray'});
   } else {
     tada.muted = false;
     mute = false;
-    $('.vol-icon').css({'color':'#fbb931'});
+    $('.volume-icon').css({'color':'#fbb931'});
   }
 }
