@@ -1,9 +1,6 @@
 $(document).ready(initializeApp);
 
-let app;
-
 function initializeApp() {
-  // app = new Game($('body'));
   $('.landing-btn').click(closeLanding);
   createProgressIcon();
   createAllCards();
@@ -54,11 +51,12 @@ function closeLanding() {
 function createProgressIcon() {
   let progressIcon = $('<img>').addClass('progress-icon').attr({'src': './img/bigsnoopy.png'}).css({
     'position': 'absolute',
-    'right': progress + "%",
-    'transition': 'right 1s ease',
+    'bottom': progress + "%",
+    'right': '20%',
+    'transition': 'bottom 1s ease',
     'zIndex': '2'
   });
-  $('.player-icon-container').append(progressIcon);
+  $('.game-progress').append(progressIcon);
 }
 
 function createAllCards() {
@@ -104,7 +102,7 @@ function handleCardClick( event ) {
   }
   if ($(firstCardClicked).find('.card-front').css('background-image') === $(secondCardClicked).find('.card-front').css('background-image')) {
     progress += 7;
-    $('.progress-icon').css({'right': progress + "%"});
+    $('.progress-icon').css({'bottom': progress + "%"});
     playSuccess();
     can_click_card = false
     matches++;
@@ -153,6 +151,7 @@ function displayStats() {
     lost = true;
     bgm.pause();
     paused = true;
+    $('.music-icon').css({'color':'gray'});
     loseSound();
     games_played++
     $('.card-container').find('.card-back').removeClass('card-back');
@@ -177,7 +176,7 @@ function resetStats() {
   removeAllCards();
   createAllCards();
   $('.card-container').on('click', handleCardClick);
-  $('.progress-icon').css({'right': progress + "%",});
+  $('.progress-icon').css({'bottom': progress + "%",});
   $('#winModal').modal('hide');
 }
 
@@ -211,6 +210,7 @@ function playSuccess() {
 
 function winSound() {
   bgm.pause();
+  $('.music-icon').css({'color':'gray'});
   paused = true;
   win.volume = .4;
   win.play();

@@ -29,62 +29,69 @@
         </div>
       </div>
     </div>
-    <div class="game-page">
-      <main class="container-fluid">
-        <section class="game-area">
+      <!-- Game Page -->
+      <div class="game-page container-fluid">
+        <main class="game-area">
           <!-- Title & Stats Area -->
           <div class="title-stats-container">
             <div class="logo-container"><h1 class="logo">The Peanut Gallery</h1></div>
-            <aside class="game-stats container-fluid">
-              <div class="cheer">
-                <img src="./img/go.png" alt="cheer" class="img-fluid" data-toggle="tooltip" data-html="true" title="Match all the pairs so Snoopy can go home!">
-              </div>
-              <div>
-                <h3>Attempts</h3>
-              </div>
-              <div>
-                <h4 class="attempts-value"></h4>
-              </div>
-              <div>
-                <h3>Accuracy</h3>
-              </div>
-              <div>
-                <h4 class="accuracy-value"></h4>
-              </div>
-              <div>
-                <h3># Games</h3>
-              </div>
-              <div>
-                <h4 class="games-played-value"></h4>
-              </div>
-              <div class="mb-3">
-                <button class="restart-game btn btn-sm btn-warning">Restart</button>
-              </div>
-              <div class="sound-btn-container mb-3">
-                <div class="volume-btn mr-1">
-                  <i class="fas fa-volume-up volume-icon"></i>
+              <aside class="game-stats container-fluid">
+                <div class="cheer">
+                  <img src="./img/go.png" alt="cheer" class="img-fluid" data-toggle="tooltip" data-html="true" title="Match all the pairs so Snoopy can go home!">
                 </div>
-                <div class="music-btn ml-1">
-                  <i class="fas fa-music music-icon"></i>
-                </div>            
-              </div>
-              <div class="about">
-                <button class="btn btn-sm about-btn">About</button>
-              </div>
-            </aside>
-          </div>
-          <!-- Game Area -->
+                <div>
+                  <h3>Attempts</h3>
+                </div>
+                <div>
+                  <h4 class="attempts-value"></h4>
+                </div>
+                <div>
+                  <h3>Accuracy</h3>
+                </div>
+                <div>
+                  <h4 class="accuracy-value"></h4>
+                </div>
+                <div>
+                  <h3># Games</h3>
+                </div>
+                <div>
+                  <h4 class="games-played-value"></h4>
+                </div>
+                <div class="mb-2">
+                  <button class="restart-game btn btn-sm btn-warning">Restart</button>
+                </div>
+                <div class="sound-btn-container mb-2">
+                  <div class="volume-btn mr-1">
+                    <i class="fas fa-volume-up volume-icon"></i>
+                  </div>
+                  <div class="music-btn ml-1">
+                    <i class="fas fa-music music-icon"></i>
+                  </div>            
+                </div>
+                <div class="about mb-2">
+                  <button class="btn btn-sm about-btn">About</button>
+                </div>
+              </aside>
+            </div>
+            <!-- Gameboard -->
             <div class="gameboard">
-              <div class="game-progress">
+              <!-- <div class="game-progress">
                 <div><img src="./img/doghouse.png" alt="yay" class="doghouse img-fluid"></div>
                 <div><img src="./img/paws.gif" alt="paw" class="paw-prints img-fluid"></div>
                 <div class="player-icon-container"></div>
-              </div>
-              <div class="main-card-container container-fluid"></div>
+              </div> -->
+            <div class="main-card-container container-fluid"></div>
+          </div>
+          <!-- Progress Area -->
+          <div class="progress-container">
+            <div class="progress-header-container"><h2 class="progress-header">Progress</h2></div>
+            <div class="game-progress container-fluid">
+              <div><img src="./img/doghouse.png" alt="yay" class="doghouse img-fluid"></div>
+              <div><img src="./img/pawsup.gif" alt="paw" class="paw-prints img-fluid"></div>
             </div>
           </div>
-        </section>
-      </main>
+        </main>
+      </div>
       <!-- Win Modal -->
       <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="winModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
