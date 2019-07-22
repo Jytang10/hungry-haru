@@ -45,7 +45,7 @@ let progress = 0
 
 function closeLanding() {
   $('.cover').hide();
-  $('.game-page').removeClass('game-page');
+  $('.game-page').removeClass('d-none');
 }
 
 function createProgressIcon() {
