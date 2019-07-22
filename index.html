@@ -14,30 +14,30 @@
   </head>
   <body>
     <!-- Vertical Mode Warning Page -->
-    <div class="warning">
-      <div class="warning-content">
+    <div class="warning justify-content-center w-100 h-100 position-fixed d-none">
+      <div class="warning-content text-center w-50 h-40 position-relative">
         <div class="warning-text">Please turn your device to landscape orientation for the best game experience!</div>
         <img src="./img/rotate.gif" alt="rotate" class="img-fluid">
       </div>
     </div>
     <!-- Landing Page -->
-    <div class="cover">
-      <div class="landing-content">
-        <div class="landing-title">The Peanut Gallery</div>
-        <div class="landing-btn-container">
-          <button class="landing-btn btn btn-lg">New Game</button>
+    <div class="cover justify-content-center w-100 h-100 position-fixed">
+      <div class="landing-content w-50 h-40 position-relative">
+        <div class="landing-title text-center position-relative">The Peanut Gallery</div>
+        <div class="landing-btn-container text-center position-relative">
+          <button class="landing-btn btn btn-lg w-30">New Game</button>
         </div>
       </div>
     </div>
       <!-- Game Page -->
-      <div class="game-page container-fluid">
-        <main class="game-area">
+      <div class="game-page container-fluid d-none">
+        <main class="game-area align-items-center">
           <!-- Title & Stats Area -->
           <div class="title-stats-container">
-            <div class="logo-container"><h1 class="logo">The Peanut Gallery</h1></div>
-              <aside class="game-stats container-fluid">
+            <div class="logo-container justify-content-center"><h1 class="logo text-center">The Peanut Gallery</h1></div>
+              <aside class="game-stats container-fluid text-center">
                 <div class="cheer">
-                  <img src="./img/go.png" alt="cheer" class="img-fluid" data-toggle="tooltip" data-html="true" title="Match all the pairs so Snoopy can go home!">
+                  <img src="./img/go.png" alt="cheer" class="img-fluid w-50" data-toggle="tooltip" data-html="true" title="Match all the pairs so Snoopy can go home!">
                 </div>
                 <div>
                   <h3>Attempts</h3>
@@ -73,19 +73,14 @@
                 </div>
               </aside>
             </div>
-            <!-- Gameboard -->
-            <div class="gameboard">
-              <!-- <div class="game-progress">
-                <div><img src="./img/doghouse.png" alt="yay" class="doghouse img-fluid"></div>
-                <div><img src="./img/paws.gif" alt="paw" class="paw-prints img-fluid"></div>
-                <div class="player-icon-container"></div>
-              </div> -->
+          <!-- Gameboard -->
+          <div class="gameboard">
             <div class="main-card-container container-fluid"></div>
           </div>
           <!-- Progress Area -->
           <div class="progress-container">
-            <div class="progress-header-container"><h2 class="progress-header">Progress</h2></div>
-            <div class="game-progress container-fluid">
+            <div class="progress-header-container justify-content-center"><h2 class="progress-header text-center">Progress</h2></div>
+            <div class="game-progress container-fluid text-center position-relative">
               <div><img src="./img/doghouse.png" alt="yay" class="doghouse img-fluid"></div>
               <div><img src="./img/pawsup.gif" alt="paw" class="paw-prints img-fluid"></div>
             </div>
@@ -137,11 +132,12 @@
               </button>
             </div>
             <div class="modal-body text-center">
-              <img src="./img/about.jpg" alt="JT" class="about-img img-fluid">
+              <img src="./img/about.jpg" alt="JT" class="about-img img-fluid w-50">
               <p>
-                Hi, I'm James Tang. Thank you for playing The Peanut Gallery! This projet uses HTML, CSS, JavaScript and jQuery for game display and game play functionality. 
-                The first time I coded the game I had difficulties understanding jQuery DOM creation, so a few months later I went back to re-do the game and refactor it in OOP.
-                The coding went much smoother and I was happy to see how my skills had grown.
+                Hi, I'm James Tang and thank you for playing! Originally started as a simple card-matching game, I decided to add a Peanuts theme because I've been a fan of Snoopy since childhood.
+                I used HTML, CSS & Bootstrap to display and style the game while using JavaScript (written in OOP) for game functionality. As one of the first projects started when I began to learn how to program,
+                I struggled with applying JavaScript and jQuery for the card logic and DOM creation. I came back to start the project from scratch after 2 months and was happy to find that what challenged me initially had turned into a piece of cake.
+                Please feel free to visit my <a href="https://github.com/Jytang10/peanut-gallery">GitHub</a> or <a href="https://jamestang.dev/">Portfolio</a> for more of my projects. Thank you!
               </p>
             </div>
             <div class="modal-footer justify-content-center">
