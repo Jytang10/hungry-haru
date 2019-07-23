@@ -1,5 +1,6 @@
 # The Peanut Gallery
-* Live Demo: __https://peanut-gallery.jamestang.dev/__
+##Live Demo
+ __https://peanut-gallery.jamestang.dev/__
 ![](./img/pg-video.gif)
 <hr/>
 A memory match game with a Peanuts theme. Users flip and try to match cards within a set number of attempts. 
