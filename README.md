@@ -1,5 +1,5 @@
 # The Peanut Gallery
-##Live Demo
+## Live Demo
  __https://peanut-gallery.jamestang.dev/__
 ![](./img/pg-video.gif)
 <hr/>
