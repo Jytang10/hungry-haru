@@ -3,6 +3,8 @@ class Game {
     this.firstCardClicked = null;
     this.secondCardClicked = null;
     this.can_click_card = true;
+    this.handleCardClick = this.handleCardClick.bind(this);
+    this.lost = false;
   }
 
   createAllCards() {
@@ -18,20 +20,7 @@ class Game {
       'schroeder'
     ];
     let doubleImages = imageArray.concat(imageArray);
-  
-    function shuffle(array){
-        let currentIndex = array.length, temporaryValue, randomIndex;
-        while (0 !== currentIndex) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-        }
-        return array;
-    }
-    let shuffledArray = shuffle(doubleImages);
-  
+    let shuffledArray = this.shuffle(doubleImages);
     let cardGroup = $('<div>').addClass('card-group');
     for(let index = 0; index < 18; index++){
         let cardContainer = $('<div>').addClass('card-container');
@@ -44,8 +33,20 @@ class Game {
     $('.main-card-container').append(cardGroup);
   }
 
+  shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
+}
+
   handleCardClick( event ) {
-    if(this.can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('d-none') || lost === true){
+    if(this.can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('d-none') || this.lost === true){
       return;
     }
     if (this.firstCardClicked === null) {
@@ -58,9 +59,9 @@ class Game {
       stats.attempts++;
     }
     if ($(this.firstCardClicked).find('.card-front').css('background-image') === $(this.secondCardClicked).find('.card-front').css('background-image')) {
-      progress += 7;
-      $('.progress-icon').css({'bottom': progress + "%"});
-      playSuccess();
+      progress.progress += 7;
+      $('.progress-icon').css({'bottom': progress.progress + "%"});
+      sounds.playSuccess();
       this.can_click_card = false
       stats.matches++;
       setTimeout(()=>{
@@ -73,14 +74,14 @@ class Game {
       stats.displayStats();
       if(stats.matches === stats.max_matches) {
       setTimeout(()=>{
-        winSound();
+        sounds.winSound();
       }, 500);
       stats.games_played++;
       $('#winModal').modal({backdrop: 'static', keyboard: false});
       }
       return;
     } else if(this.firstCardClicked && this.secondCardClicked && $(this.firstCardClicked).find('.card-front').css('background-image') !== $(this.secondCardClicked).find('.card-front').css('background-image')) {
-      displayStats()
+      stats.displayStats()
       this.can_click_card = false;
       setTimeout(()=>{
         $(this.firstCardClicked).find('.card-back').removeClass('d-none');

@@ -5,19 +5,20 @@ class Stats {
     this.attempts = 0;
     this.accuracy = 0;
     this.games_played = 0;
+    this.resetStats = this.resetStats.bind(this);
   }
 
   displayStats() {
-    let storeResult = calculateAccuracy().toFixed(0);
+    let storeResult = this.calculateAccuracy().toFixed(0);
     $('.attempts-value').text(this.attempts + ' / 30');
     $('.accuracy-value').text(storeResult + '%');
     $('.games-played-value').text(this.games_played);
     if(this.attempts === 30) {
-      sounds.lost = true;
-      bgm.pause();
-      paused = true;
+      game.lost = true;
+      sounds.bgm.pause();
+      sounds.paused = true;
       $('.music-icon').css({'color':'gray'});
-      loseSound();
+      sounds.loseSound();
       this.games_played++
       $('.card-container').find('.card-back').removeClass('card-back');
       $('#loseModal').modal('show');
@@ -32,19 +33,19 @@ class Stats {
   }
   
   resetStats() {
-    lost = false;
-    win.pause();
+    game.lost = false;
+    sounds.win.pause();
     this.matches = 0;
     this.accuracy = 0;
     this.attempts = 0;
-    progress = 0;
+    progress.progress = 0;
     game.firstCardClicked = null;
     game.secondCardClicked = null;
     this.displayStats();
     game.removeAllCards();
     game.createAllCards();
     $('.card-container').on('click', game.handleCardClick);
-    $('.progress-icon').css({'bottom': progress + "%",});
+    $('.progress-icon').css({'bottom': progress.progress + "%",});
     $('#winModal').modal('hide');
   }
   

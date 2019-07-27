@@ -1,4 +1,4 @@
-let game, sounds, stats;
+let game, sounds, stats, progress;
 $(document).ready(initializeApp);
 
 function initializeApp() {

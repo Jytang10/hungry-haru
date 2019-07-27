@@ -1,12 +1,16 @@
 class Sounds {
   constructor() {
     this.paused;
-    this.lost = false;
     this.mute = false;
     this.bgm = new Audio("./sounds/theme.mp3");
     this.jingle = new Audio("./sounds/jingle.wav");
     this.win = new Audio("./sounds/theme-ska.mp3");
     this.lose = new Audio("./sounds/good-grief.mp3");
+    this.toggleBGM = this.toggleBGM.bind(this);
+    this.playSuccess = this.playSuccess.bind(this);
+    this.winSound = this.winSound.bind(this);
+    this.loseSound = this.loseSound.bind(this);
+    this.muteSounds = this.muteSounds.bind(this);
   }
 
   toggleBGM() {
