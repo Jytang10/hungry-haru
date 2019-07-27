@@ -9,7 +9,7 @@ class Stats {
   }
 
   displayStats() {
-    let storeResult = this.calculateAccuracy().toFixed(0);
+    let storeResult = this.calculateAccuracy(this.matches, this.attempts).toFixed(0);
     $('.attempts-value').text(this.attempts + ' / 30');
     $('.accuracy-value').text(storeResult + '%');
     $('.games-played-value').text(this.games_played);
@@ -25,9 +25,9 @@ class Stats {
     }
   }
 
-  calculateAccuracy() {          //use params
+  calculateAccuracy(matches, attempts) {
     if (this.attempts) {
-      this.accuracy = ((this.matches / this.attempts) * 100)
+      this.accuracy = (( matches/ attempts) * 100)
     } 
     return this.accuracy;
   }
