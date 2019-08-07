@@ -3,6 +3,7 @@ class Stats {
     this.matches = 0;
     this.max_matches = 9;
     this.attempts = 0;
+    this.errors = 0;
     this.accuracy = 0;
     this.games_played = 0;
     this.resetStats = this.resetStats.bind(this);
@@ -10,10 +11,10 @@ class Stats {
 
   displayStats() {
     let storeResult = this.calculateAccuracy(this.matches, this.attempts).toFixed(0);
-    $('.attempts-value').text(this.attempts + ' / 30');
+    $('.errors-value').text(this.errors + ' / 20');
     $('.accuracy-value').text(storeResult + '%');
     $('.games-played-value').text(this.games_played);
-    if(this.attempts === 30) {
+    if(this.errors === 20) {
       game.lost = true;
       sounds.bgm.pause();
       sounds.paused = true;
@@ -27,7 +28,7 @@ class Stats {
 
   calculateAccuracy(matches, attempts) {
     if (this.attempts) {
-      this.accuracy = (( matches/ attempts) * 100)
+      this.accuracy = (( matches / attempts) * 100)
     } 
     return this.accuracy;
   }
@@ -38,6 +39,7 @@ class Stats {
     this.matches = 0;
     this.accuracy = 0;
     this.attempts = 0;
+    this.errors = 0;
     progress.progress = 0;
     game.firstCardClicked = null;
     game.secondCardClicked = null;

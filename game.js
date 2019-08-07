@@ -46,7 +46,7 @@ class Game {
 }
 
   handleCardClick( event ) {
-    if(this.can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('d-none') || this.lost === true){
+    if (this.can_click_card === false || $(event.currentTarget).find('.card-back').hasClass('d-none') || this.lost === true){
       return;
     }
     if (this.firstCardClicked === null) {
@@ -81,6 +81,7 @@ class Game {
       }
       return;
     } else if(this.firstCardClicked && this.secondCardClicked && $(this.firstCardClicked).find('.card-front').css('background-image') !== $(this.secondCardClicked).find('.card-front').css('background-image')) {
+      stats.errors++;
       stats.displayStats()
       this.can_click_card = false;
       setTimeout(()=>{
