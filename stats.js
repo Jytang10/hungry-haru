@@ -7,6 +7,7 @@ class Stats {
     this.accuracy = 0;
     this.games_played = 0;
     this.resetStats = this.resetStats.bind(this);
+    this.restartGame = this.restartGame.bind(this);
   }
 
   displayStats() {
